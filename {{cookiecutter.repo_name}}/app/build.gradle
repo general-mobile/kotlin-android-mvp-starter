@@ -11,6 +11,9 @@ buildscript {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+{% if cookiecutter.kotlin-android-extensions == "y" %}
+apply plugin: 'kotlin-android-extensions'
+{% endif %}
 {% if cookiecutter.realm == "y" %}
 apply plugin: 'realm-android'
 {% endif %}
@@ -90,11 +93,6 @@ dependencies {
     compile rootProject.ext.gson
     compile rootProject.ext.rxJavaAdapter
     compile rootProject.ext.gsonConverter
-    {% endif %}
-
-    {% if cookiecutter.greendao == "y" %}
-    //greenDao
-    compile rootProject.ext.greenDao
     {% endif %}
 
     {% if cookiecutter.picasso == "y" %}

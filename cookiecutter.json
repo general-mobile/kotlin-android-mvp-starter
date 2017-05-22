@@ -1,15 +1,16 @@
 {
   "project_name": "kotlin-starter-project",
   "repo_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
-  "min_sdk" : 16,
-  "target_sdk" : 25,
+  "min_sdk": 16,
+  "target_sdk": 25,
   "package_name": "com.generalmobile.app.{{ cookiecutter.project_name|lower|replace(' ', '')|replace('-', '') }}",
   "description": "A short description of the project.",
   "author": "General Mobile",
   "email": "generalmobiledev@gmail.com",
-  "version" : "1.0.0",
-  "splash_screen" : "n",
-  "retrofit" : "n",
-  "realm" : "n",
-  "picasso" : "n"
+  "version": "1.0.0",
+  "splash_screen": "n",
+  "retrofit": "n",
+  "realm": "n",
+  "picasso": "n",
+  "kotlin-android-extensions": "n"
 }
