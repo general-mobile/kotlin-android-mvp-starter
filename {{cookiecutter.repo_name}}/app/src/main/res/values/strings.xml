@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">{{ cookiecutter.project_name|replace('-', '')|replace('_', '')|title }}</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Ana Sayfa</string>
+    <string name="menu_about">Hakkında</string>
+    <string name="menu_exit">Çıkış</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+</resources>

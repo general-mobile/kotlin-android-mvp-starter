@@ -1,0 +1,115 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+{% if cookiecutter.realm == "y" %}
+apply plugin: 'realm-android'
+{% endif %}
+
+def STRING = 'String'
+def BUILD_TIME = 'BUILD_TIME'
+
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        applicationId "{{ cookiecutter.package_name }}"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "{{ cookiecutter.version }}"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField STRING, BUILD_TIME, "\"${rootProject.ext.buildTime}\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets{
+	main.java.srcDirs += 'src/main/kotlin'
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //supportLib
+    compile rootProject.ext.supportLib
+    compile rootProject.ext.supportLibAppCompat
+    compile rootProject.ext.supportLibDesign
+    compile rootProject.ext.supportLibRecyclerview
+    compile rootProject.ext.supportLibCardview
+
+    //timber
+    compile rootProject.ext.timber
+
+    //crashlytics
+    compile (rootProject.ext.crashlytics){
+        transitive = true;
+    }
+
+    //di
+    compile rootProject.ext.dagger
+    kapt rootProject.ext.daggerApt
+    //compile rootProject.ext.daggerSupport
+    //annotationProcessor rootProject.ext.daggerAnnotation
+
+    //rx
+    compile rootProject.ext.rxJava
+    compile rootProject.ext.rxAndroid
+    compile rootProject.ext.rxKotlin
+
+    {% if cookiecutter.retrofit == "y" %}
+    //net
+    compile rootProject.ext.retrofit
+    compile rootProject.ext.okHttp
+    compile rootProject.ext.gson
+    compile rootProject.ext.rxJavaAdapter
+    compile rootProject.ext.gsonConverter
+    {% endif %}
+
+    {% if cookiecutter.greendao == "y" %}
+    //greenDao
+    compile rootProject.ext.greenDao
+    {% endif %}
+
+    {% if cookiecutter.picasso == "y" %}
+    //picasso
+    compile rootProject.ext.picasso
+    {% endif %}
+
+    //test
+    testCompile 'junit:junit:4.12'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
+    })
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
