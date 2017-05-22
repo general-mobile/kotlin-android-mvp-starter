@@ -1,4 +1,4 @@
-# Android Starter
+# Android Kotlin MVP Starter
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/general-mobile/kotlin-android-mvp-starter/master/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](http://developer.android.com/index.html)
