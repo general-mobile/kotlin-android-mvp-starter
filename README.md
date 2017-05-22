@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/general-mobile/kotlin-android-mvp-starter/master/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](http://developer.android.com/index.html)
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Kotlin%20MVP%20Starter-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/5791)
 Android Kotlin Starter is a starter project which implements MVP Pattern.  
 
 ## Thanks
