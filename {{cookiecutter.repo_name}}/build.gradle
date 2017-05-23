@@ -43,6 +43,9 @@ ext{
     picassoVersion = '2.5.2'
     crashlyticsVersion = '2.6.8'
     gsonVersion = '2.8.0'
+    glideVersion = '4.0.0-RC0'
+    materializeVersion = '1.0.1'
+    materialDrawerVersion = '5.9.1'
 
     //supportLib
     supportLib = "com.android.support:support-v4:$supportLibVersion"
@@ -80,6 +83,16 @@ ext{
 
     //picasso
     picasso = "com.squareup.picasso:picasso:$picassoVersion"
+
+    //materialize
+    materialize = "com.mikepenz:materialize:$materializeVersion@aar"
+
+    //materialDrawer
+    materialDrawer = "com.mikepenz:materialdrawer:$materialDrawerVersion@aar"
+
+    //glide
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+    glideAnnotation = "com.github.bumptech.glide:compiler:$glideVersion"
 
     buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 }

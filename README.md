@@ -23,6 +23,7 @@ It includes libraries
 - [Picasso](http://square.github.io/picasso/)
 - [Materialize](https://github.com/mikepenz/Materialize)
 - [MaterialDrawer](https://github.com/mikepenz/MaterialDrawer)
+- [Glide](https://github.com/bumptech/glide)
 
 **You can choose which library you want to include in your project**
 

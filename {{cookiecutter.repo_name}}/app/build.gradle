@@ -95,19 +95,23 @@ dependencies {
     implementation rootProject.ext.gsonConverter
     {% endif %}
 
-    {% if cookiecutter.picasso == "y" %}
+    {% if cookiecutter.image_downloader == "picasso" %}
     //picasso
     implementation rootProject.ext.picasso
+    {% elif cookiecutter.image_downloader == "glide" %}
+    //glide
+    implementation rootProject.ext.glide
+    implementation rootProject.ext.glideAnnotation
     {% endif %}
 
     {% if cookiecutter.materialize == "y" %}
     // Mike Penz - Materialize
-    implementation "com.mikepenz:materialize:1.0.1@aar"
+    implementation rootProject.ext.materialize
     {% endif %}
 
     {% if cookiecutter.material_drawer == "y" %}
     // Mike Penz - Material Drawer
-    implementation('com.mikepenz:materialdrawer:5.9.1@aar') {
+    implementation(rootProject.ext.materialDrawer) {
         transitive = true
     }
     {% endif %}

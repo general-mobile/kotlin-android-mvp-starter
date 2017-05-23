@@ -11,7 +11,7 @@
   "splash_screen": "n",
   "retrofit": "n",
   "realm": "n",
-  "picasso": "n",
+  "image_downloader": ["none", "picasso", "glide"],
   "materialize": "n",
   "material_drawer": "n",
   "kotlin_android_extensions": "n"
