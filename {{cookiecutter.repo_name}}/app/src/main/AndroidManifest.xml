@@ -39,7 +39,7 @@
 	<!--TODO:put your fabric api key here-->
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value=""  />
+            android:value="{{ cookiecutter.fabric_api }}"  />
     </application>
 
 </manifest>

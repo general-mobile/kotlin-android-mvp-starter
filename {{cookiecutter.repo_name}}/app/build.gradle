@@ -116,6 +116,21 @@ dependencies {
     }
     {% endif %}
 
+    {% if cookiecutter.kotlin_anko == "y" %}
+    ankoCommonV4Support = "org.jetbrains.anko:anko-support-v4:$ankoVersion"
+    ankoCommonV4SupportCommon = "org.jetbrains.anko:anko-support-v4-commons:$ankoVersion"
+    ankoCommon = "org.jetbrains.anko:anko-appcompat-v7-commons:$ankoVersion"
+    ankoCompat = "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion"
+    ankoCompatCoroutines = "org.jetbrains.anko:anko-coroutines:$ankoVersion"
+    ankoCardView = "org.jetbrains.anko:anko-cardview-v7:$ankoVersion"
+    ankoDesign = "org.jetbrains.anko:anko-design:$ankoVersion"
+    ankoDesignCoroutines = "org.jetbrains.anko:anko-design-coroutines:$ankoVersion"
+    ankoGridLayout = "org.jetbrains.anko:anko-gridlayout-v7:$ankoVersion"
+    ankoPercent = "org.jetbrains.anko:anko-percent:$ankoVersion"
+    ankoRecyclerView = "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion"
+    ankoRecyclerViewCoroutines = "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$ankoVersion"
+    {% endif %}
+
     //test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {

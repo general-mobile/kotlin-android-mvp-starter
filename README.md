@@ -24,6 +24,7 @@ It includes libraries
 - [Materialize](https://github.com/mikepenz/Materialize)
 - [MaterialDrawer](https://github.com/mikepenz/MaterialDrawer)
 - [Glide](https://github.com/bumptech/glide)
+- [AnKo](https://github.com/Kotlin/anko)
 
 **You can choose which library you want to include in your project**
 
