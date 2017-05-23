@@ -41,7 +41,7 @@ ext{
     okHttpVersion = '3.6.0'
     greenDaoVersion = '3.2.2'
     picassoVersion = '2.5.2'
-    crashlyticsVersion = '2.6.7'
+    crashlyticsVersion = '2.6.8'
     gsonVersion = '2.8.0'
 
     //supportLib
