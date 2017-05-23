@@ -29,7 +29,7 @@ repositories {
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion "25.0.3"
+    buildToolsVersion "26.0.0-rc2"
 
     defaultConfig {
         applicationId "{{ cookiecutter.package_name }}"
@@ -58,55 +58,67 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //supportLib
-    compile rootProject.ext.supportLib
-    compile rootProject.ext.supportLibAppCompat
-    compile rootProject.ext.supportLibDesign
-    compile rootProject.ext.supportLibRecyclerview
-    compile rootProject.ext.supportLibCardview
+    implementation rootProject.ext.supportLib
+    implementation rootProject.ext.supportLibAppCompat
+    implementation rootProject.ext.supportLibDesign
+    implementation rootProject.ext.supportLibRecyclerview
+    implementation rootProject.ext.supportLibCardview
 
     //timber
-    compile rootProject.ext.timber
+    implementation rootProject.ext.timber
 
     //crashlytics
-    compile (rootProject.ext.crashlytics){
+    implementation (rootProject.ext.crashlytics){
         transitive = true;
     }
 
     //di
-    compile rootProject.ext.dagger
+    implementation rootProject.ext.dagger
     kapt rootProject.ext.daggerApt
-    //compile rootProject.ext.daggerSupport
+    //implementation rootProject.ext.daggerSupport
     //annotationProcessor rootProject.ext.daggerAnnotation
 
     //rx
-    compile rootProject.ext.rxJava
-    compile rootProject.ext.rxAndroid
-    compile rootProject.ext.rxKotlin
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxKotlin
 
     {% if cookiecutter.retrofit == "y" %}
     //net
-    compile rootProject.ext.retrofit
-    compile rootProject.ext.okHttp
-    compile rootProject.ext.gson
-    compile rootProject.ext.rxJavaAdapter
-    compile rootProject.ext.gsonConverter
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.okHttp
+    implementation rootProject.ext.gson
+    implementation rootProject.ext.rxJavaAdapter
+    implementation rootProject.ext.gsonConverter
     {% endif %}
 
     {% if cookiecutter.picasso == "y" %}
     //picasso
-    compile rootProject.ext.picasso
+    implementation rootProject.ext.picasso
+    {% endif %}
+
+    {% if cookiecutter.materialize == "y" %}
+    // Mike Penz - Materialize
+    implementation "com.mikepenz:materialize:1.0.1@aar"
+    {% endif %}
+
+    {% if cookiecutter.material_drawer == "y" %}
+    // Mike Penz - Material Drawer
+    implementation('com.mikepenz:materialdrawer:5.9.1@aar') {
+        transitive = true
+    }
     {% endif %}
 
     //test
-    testCompile 'junit:junit:4.12'
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    testimplementation 'junit:junit:4.12'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.google.code.findbugs'
     })
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {
     mavenCentral()

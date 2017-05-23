@@ -12,5 +12,7 @@
   "retrofit": "n",
   "realm": "n",
   "picasso": "n",
+  "materialize": "n",
+  "material_drawer": "n",
   "kotlin_android_extensions": "n"
 }

@@ -21,6 +21,8 @@ It includes libraries
 - [Crashlytics](https://try.crashlytics.com/)
 - [Realm](https://realm.io/)
 - [Picasso](http://square.github.io/picasso/)
+- [Materialize](https://github.com/mikepenz/Materialize)
+- [MaterialDrawer](https://github.com/mikepenz/MaterialDrawer)
 
 **You can choose which library you want to include in your project**
 

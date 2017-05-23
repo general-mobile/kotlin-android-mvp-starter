@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.2-3'
+    ext.kotlin_version = '1.1.2-4'
     repositories {
         maven { url 'https://maven.google.com' }
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         {% if cookiecutter.realm == "y" %}
         classpath "io.realm:realm-gradle-plugin:3.1.1"
@@ -27,7 +27,7 @@ allprojects {
 
 ext{
 
-    buildToolsVersion = '25.0.2'
+    buildToolsVersion = '26.0.0-rc2'
     compileSdkVersion = {{ cookiecutter.target_sdk }}
     targetSdkVersion = {{ cookiecutter.target_sdk }}
     minSdkVersion = {{ cookiecutter.min_sdk }}
