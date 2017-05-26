@@ -8,9 +8,16 @@
   "author": "General Mobile",
   "email": "generalmobiledev@gmail.com",
   "version": "1.0.0",
+  "fabric_api": "",
   "splash_screen": "n",
   "retrofit": "n",
   "realm": "n",
-  "picasso": "n",
-  "kotlin_android_extensions": "n"
+  "image_downloader": ["none", "picasso", "glide"],
+  "materialize": "n",
+  "material_drawer": "n",
+  "kotlin_android_extensions": "n",
+  "kotlin_anko": "n",
+  "architecture": "s",
+  "room": "s",
+  "parceler": "n"
 }

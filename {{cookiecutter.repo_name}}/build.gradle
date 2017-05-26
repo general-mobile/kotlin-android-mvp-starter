@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.2-3'
+    ext.kotlin_version = '1.1.2-4'
     repositories {
         maven { url 'https://maven.google.com' }
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         {% if cookiecutter.realm == "y" %}
         classpath "io.realm:realm-gradle-plugin:3.1.1"
@@ -27,12 +27,12 @@ allprojects {
 
 ext{
 
-    buildToolsVersion = '25.0.2'
+    buildToolsVersion = '26.0.0-rc2'
     compileSdkVersion = {{ cookiecutter.target_sdk }}
     targetSdkVersion = {{ cookiecutter.target_sdk }}
     minSdkVersion = {{ cookiecutter.min_sdk }}
 
-    supportLibVersion = '25.3.1'
+    supportLibVersion = '6.0.0-alpha1'
     rxJavaVersion = '2.0.1'
     rxKotlinVersion = '2.0.3'
     timberVersion = '4.5.1'
@@ -43,6 +43,12 @@ ext{
     picassoVersion = '2.5.2'
     crashlyticsVersion = '2.6.8'
     gsonVersion = '2.8.0'
+    glideVersion = '4.0.0-RC0'
+    materializeVersion = '1.0.1'
+    materialDrawerVersion = '5.9.1'
+    ankoVersion = '0.10'
+    architectureVersion = '1.0.0-alpha1'
+    parcelerVersion = '1.1.8'
 
     //supportLib
     supportLib = "com.android.support:support-v4:$supportLibVersion"
@@ -80,6 +86,44 @@ ext{
 
     //picasso
     picasso = "com.squareup.picasso:picasso:$picassoVersion"
+
+    //materialize
+    materialize = "com.mikepenz:materialize:$materializeVersion@aar"
+
+    //materialDrawer
+    materialDrawer = "com.mikepenz:materialdrawer:$materialDrawerVersion@aar"
+
+    //glide
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+    glideAnnotation = "com.github.bumptech.glide:compiler:$glideVersion"
+
+    //kotlin-anko
+    ankoCommonV4Support = "org.jetbrains.anko:anko-support-v4:$ankoVersion"
+    ankoCommonV4SupportCommon = "org.jetbrains.anko:anko-support-v4-commons:$ankoVersion"
+    ankoCommon = "org.jetbrains.anko:anko-appcompat-v7-commons:$ankoVersion"
+    ankoCompat = "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion"
+    ankoCompatCoroutines = "org.jetbrains.anko:anko-coroutines:$ankoVersion"
+    ankoCardView = "org.jetbrains.anko:anko-cardview-v7:$ankoVersion"
+    ankoDesign = "org.jetbrains.anko:anko-design:$ankoVersion"
+    ankoDesignCoroutines = "org.jetbrains.anko:anko-design-coroutines:$ankoVersion"
+    ankoGridLayout = "org.jetbrains.anko:anko-gridlayout-v7:$ankoVersion"
+    ankoPercent = "org.jetbrains.anko:anko-percent:$ankoVersion"
+    ankoRecyclerView = "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion"
+    ankoRecyclerViewCoroutines = "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$ankoVersion"
+
+    //architecture
+    architectureLifecycleRuntime = "android.arch.lifecycle:runtime:$architectureVersion"
+    architectureLifecycleExtensions = "android.arch.lifecycle:extensions:$architectureVersion"
+    architectureLifecycleAnnotation = "android.arch.lifecycle:compiler:$architectureVersion"
+
+    //room
+    roomRuntime = "android.arch.persistence.room:runtime:$architectureVersion"
+    roomAnnotation = "android.arch.persistence.room:compiler:$architectureVersion"
+    roomRx = "android.arch.persistence:room.room:rxjava2:$architectureVersion"
+
+    //parceler
+    parcelerAPI = "org.parceler:parceler-api:$parcelerVersion"
+    parcelerAnnotation = "org.parceler:parceler:$parcelerVersion"
 
     buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 }
