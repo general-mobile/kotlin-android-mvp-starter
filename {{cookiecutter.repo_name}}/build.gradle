@@ -32,7 +32,7 @@ ext{
     targetSdkVersion = {{ cookiecutter.target_sdk }}
     minSdkVersion = {{ cookiecutter.min_sdk }}
 
-    supportLibVersion = '25.3.1'
+    supportLibVersion = '6.0.0-alpha1'
     rxJavaVersion = '2.0.1'
     rxKotlinVersion = '2.0.3'
     timberVersion = '4.5.1'
@@ -47,6 +47,7 @@ ext{
     materializeVersion = '1.0.1'
     materialDrawerVersion = '5.9.1'
     ankoVersion = '0.10'
+    architectureVersion = '1.0.0-alpha1'
 
     //supportLib
     supportLib = "com.android.support:support-v4:$supportLibVersion"
@@ -108,6 +109,16 @@ ext{
     ankoPercent = "org.jetbrains.anko:anko-percent:$ankoVersion"
     ankoRecyclerView = "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion"
     ankoRecyclerViewCoroutines = "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$ankoVersion"
+
+    //architecture
+    architectureLifecycleRuntime = "android.arch.lifecycle:runtime:$architectureVersion"
+    architectureLifecycleExtensions = "android.arch.lifecycle:extensions:$architectureVersion"
+    architectureLifecycleAnnotation = "android.arch.lifecycle:compiler:$architectureVersion"
+
+    //room
+    roomRuntime = "android.arch.persistence.room:runtime:$architectureVersion"
+    roomAnnotation = "android.arch.persistence.room:compiler:$architectureVersion"
+    roomRx = "android.arch.persistence:room.room:rxjava2:$architectureVersion"
 
     buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 }

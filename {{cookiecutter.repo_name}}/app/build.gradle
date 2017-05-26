@@ -117,18 +117,33 @@ dependencies {
     {% endif %}
 
     {% if cookiecutter.kotlin_anko == "y" %}
-    ankoCommonV4Support = "org.jetbrains.anko:anko-support-v4:$ankoVersion"
-    ankoCommonV4SupportCommon = "org.jetbrains.anko:anko-support-v4-commons:$ankoVersion"
-    ankoCommon = "org.jetbrains.anko:anko-appcompat-v7-commons:$ankoVersion"
-    ankoCompat = "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion"
-    ankoCompatCoroutines = "org.jetbrains.anko:anko-coroutines:$ankoVersion"
-    ankoCardView = "org.jetbrains.anko:anko-cardview-v7:$ankoVersion"
-    ankoDesign = "org.jetbrains.anko:anko-design:$ankoVersion"
-    ankoDesignCoroutines = "org.jetbrains.anko:anko-design-coroutines:$ankoVersion"
-    ankoGridLayout = "org.jetbrains.anko:anko-gridlayout-v7:$ankoVersion"
-    ankoPercent = "org.jetbrains.anko:anko-percent:$ankoVersion"
-    ankoRecyclerView = "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion"
-    ankoRecyclerViewCoroutines = "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$ankoVersion"
+    // Anko
+    implementation rootProject.ext.ankoCommonV4Support
+    implementation rootProject.ext.ankoCommonV4SupportCommon
+    implementation rootProject.ext.ankoCommon
+    implementation rootProject.ext.ankoCompat
+    implementation rootProject.ext.ankoCompatCoroutines
+    implementation rootProject.ext.ankoCardView
+    implementation rootProject.ext.ankoDesign
+    implementation rootProject.ext.ankoDesignCoroutines
+    implementation rootProject.ext.ankoGridLayout
+    implementation rootProject.ext.ankoPercent
+    implementation rootProject.ext.ankoRecyclerView
+    implementation rootProject.ext.ankoRecyclerViewCoroutines
+    {% endif %}
+
+    //lifecycles, licedata, viewmodel
+    {% if cookiecutter.architecture == "y" %}
+    implementation rootProject.ext.architectureLifecycleRuntime = "android.arch.lifecycle:runtime:$architectureVersion"
+    implementation rootProject.ext.architectureLifecycleExtensions = "android.arch.lifecycle:extensions:$architectureVersion"
+    annotationProcessor rootProject.ext.architectureLifecycleAnnotation = "android.arch.lifecycle:compiler:$architectureVersion"
+
+    {% if cookiecutter.room == "y" %}
+    //room
+    implementation rootProject.ext.roomRuntime
+    implementation rootProject.ext.roomRx
+    annotationProcessor rootProject.ext.roomAnnotation
+    {% endif %}
     {% endif %}
 
     //test

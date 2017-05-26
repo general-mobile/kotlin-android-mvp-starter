@@ -16,5 +16,7 @@
   "materialize": "n",
   "material_drawer": "n",
   "kotlin_android_extensions": "n",
-  "kotlin_anko": "n"
+  "kotlin_anko": "n",
+  "architecture": "s",
+  "room": "s"
 }
