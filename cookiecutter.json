@@ -18,5 +18,6 @@
   "kotlin_android_extensions": "n",
   "kotlin_anko": "n",
   "architecture": "s",
-  "room": "s"
+  "room": "s",
+  "parceler": "n"
 }

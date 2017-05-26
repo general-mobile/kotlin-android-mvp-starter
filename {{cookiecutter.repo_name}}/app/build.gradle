@@ -139,11 +139,18 @@ dependencies {
     annotationProcessor rootProject.ext.architectureLifecycleAnnotation = "android.arch.lifecycle:compiler:$architectureVersion"
 
     {% if cookiecutter.room == "y" %}
-    //room
+    // Room
     implementation rootProject.ext.roomRuntime
     implementation rootProject.ext.roomRx
     annotationProcessor rootProject.ext.roomAnnotation
     {% endif %}
+    {% endif %}
+
+
+    {% if cookiecutter.parceler == "y" %}
+    // Parceler
+    implementation rootProject.ext.parcelerAPI
+    annotationProcessor rootProject.ext.parcelerAnnotation
     {% endif %}
 
     //test

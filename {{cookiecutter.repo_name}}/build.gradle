@@ -48,6 +48,7 @@ ext{
     materialDrawerVersion = '5.9.1'
     ankoVersion = '0.10'
     architectureVersion = '1.0.0-alpha1'
+    parcelerVersion = '1.1.8'
 
     //supportLib
     supportLib = "com.android.support:support-v4:$supportLibVersion"
@@ -119,6 +120,10 @@ ext{
     roomRuntime = "android.arch.persistence.room:runtime:$architectureVersion"
     roomAnnotation = "android.arch.persistence.room:compiler:$architectureVersion"
     roomRx = "android.arch.persistence:room.room:rxjava2:$architectureVersion"
+
+    //parceler
+    parcelerAPI = "org.parceler:parceler-api:$parcelerVersion"
+    parcelerAnnotation = "org.parceler:parceler:$parcelerVersion"
 
     buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 }

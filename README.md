@@ -25,6 +25,7 @@ It includes libraries
 - [MaterialDrawer](https://github.com/mikepenz/MaterialDrawer)
 - [Glide](https://github.com/bumptech/glide)
 - [AnKo](https://github.com/Kotlin/anko)
+- [Parceler](https://github.com/johncarl81/parceler)
 
 **You can choose which library you want to include in your project**
 
